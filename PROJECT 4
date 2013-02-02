@@ -1,0 +1,112 @@
+//  Stephen L Terriault II  
+// SDI 0113
+// PROJECT 4
+
+
+var log = function (say){ console.log(say)};
+
+
+/////////////////// MY LIBRARY ////////////////////////
+
+var myLibrary = function() {
+    
+/////// STRING FUNCTION - PHONE NUMBER ///////
+    var validPhone = function(phoneNumber){
+        if (phoneNumber.length === 12) {
+            if (phoneNumber.substring(0,2), phoneNumber.substring(4,6), phoneNumber.substring(8,11) === !isNaN) {
+                if (phoneNumber.charAt(3) && phoneNumber.charAt(7) == "-") {       
+                
+                return true; 
+                }
+            return true;
+            }         
+         return true;
+    } else {    
+        return false;
+    }
+        
+    };
+/////// STRING FUNCTION - EMAIL ADDRESS ///////
+    var validEmail = function(emailAddress){
+        var atSign = (emailAddress.indexOf("@")) 
+        var dotCom = (emailAddress.indexOf("."))     
+            if ((atSign && dotCom != -1) &&
+               (emailAddress.lastIndexOf(".") == (emailAddress.length -4)) &&
+               (atSign != emailAddress.substring(0,1))){
+            return true       
+            } else {    
+            return false;
+            }
+        
+    };
+    
+/////// STRING FUNCTION - URL ///////
+    var validUrl = function(URL){
+        if  (URL.substring(0,7) === "http://" || URL.substring(0,8) === "https://"){
+        return true;
+   
+        }else{
+        
+        return false;    
+        }
+    };   
+
+//////// MATH FUNCTION - STRING TO NUMBER VALUE ///////  
+    var changeNumber = function(number){
+        var output = number;
+            (parseFloat(output)) === number
+        
+        
+        return output
+    
+    };
+    
+    
+/////// NUMBER FUNCTION - CHANGE DECIMAL ///////
+var changeDec = function (number, decimal){
+  var newDec = (number.toFixed(decimal))    
+    return newDec
+}
+
+/////// ARRAY FUNCTION - FIND TOTAL
+    var findTotal= function (array) {
+        var arrayLength = array.length;
+        var total = 0;
+            for (var i = 0; i <= arrayLength; i++) {
+               if ((array[i])) (total += parseInt(array[i]));  
+
+            }
+        return total;
+
+    }
+    
+/// RETURN VALUES ///  
+
+ return {
+        "validPhone": validPhone,
+        "validEmail": validEmail,
+        "validUrl": validUrl,
+        "changeNumber": changeNumber,
+        "findTotal": findTotal,
+        "changeDec": changeDec
+    }
+ 
+}; 
+    
+
+
+
+var newLib = new myLibrary();
+var findAmount =[1, 2, 3 ,4, 5] 
+
+
+
+log("This is a valid phone number " + newLib.validPhone("555-555-5555"))
+log("This is a valid email address " + newLib.validEmail("stephen@fullsail.com"))
+log("This is a valid url address " + newLib.validUrl("http://www.fullsail.com"))
+log("This is not a valid phone number " + newLib.validPhone("555-5555-5555"))
+log("This is not a valid email address " + newLib.validEmail("stephen@fullsail.ccom"))
+log("This is not a valid url address " + newLib.validUrl("http:/:/www.fullsail.com"))
+log("Output " + newLib.changeNumber(12))
+log("The total is " + newLib.findTotal(findAmount))
+log("The decimal changed to " + newLib.changeDec(1225, 10))
